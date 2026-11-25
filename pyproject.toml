@@ -1,0 +1,37 @@
+[project]
+name = "migration-toolkit"
+version = "0.1.0"
+description = "Profile, map, dry-run, load and reconcile a legacy CRM migration."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pydantic>=2.8",
+    "pyyaml>=6.0",
+    "rapidfuzz>=3.9",
+    "typer>=0.12",
+]
+
+[project.scripts]
+migrate = "migration_toolkit.cli:app"
+
+[dependency-groups]
+dev = ["mypy>=1.11", "pytest>=8.0", "ruff>=0.6", "types-pyyaml>=6.0"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

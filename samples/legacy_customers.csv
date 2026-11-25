@@ -1,0 +1,6 @@
+CustID,Company Name,Contact Email,Sort Code,Account No,Annual Value
+1001,  Acme Widgets Ltd ,SALES@ACME.CO.UK,12-34-56,12345678,1200.00
+1002,acme widgets limited,accounts@acme.co.uk,12 34 56,12345678,1200.00
+1003,Brightside Bakery,hello@brightside.example,,,450.50
+1004,,orphan@example.com,20-00-00,55779911,
+1005,Northwind Traders,ops@northwind.example,40-47-84,7654321,3000

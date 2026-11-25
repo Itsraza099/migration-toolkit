@@ -1,0 +1,12 @@
+# Source-to-target mapping for legacy CRM customers.
+entity: customer
+source_key: CustID
+target_table: public.customers
+target_key: legacy_id
+fields:
+  - { source: CustID,          target: legacy_id,      transform: strip,       required: true }
+  - { source: Company Name,    target: company_name,   transform: strip,       required: true }
+  - { source: Contact Email,   target: email,          transform: lower }
+  - { source: Sort Code,       target: sort_code,      transform: digits_only }
+  - { source: Account No,      target: account_number, transform: digits_only }
+  - { source: Annual Value,    target: annual_value,   transform: strip }
